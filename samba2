@@ -1,0 +1,67 @@
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nmap
+sudo apt-get install mc
+sudo adduser tanulo1
+sudo adduser tanulo2
+sudo adduser tanar1
+sudo adduser tanar2
+sudo addgroup tanulo
+sudo addgroup tanar
+sudo usermod -a -G tanulo tanulo1
+sudo usermod -a -G tanulo tanulo2
+sudo usermod -a -G tanar tanar1
+sudo usermod -a -G tanar tanar2
+sudo apt-get update
+sudo apt-get install samba -y
+sudo mkdir /srv/kozos
+sudo chmod 777 /srv/kozos
+sudo mkdir /srv/dok
+sudo chmod 775 /srv/dok
+sudo chown tanar1 /srv/tanar1
+sudo chmod 700 /srv/tanar1
+sudo mcedit /etc/samba/smb.conf
+
+[global]
+netbios name=samba
+security=user
+map to guest=bad user
+workgroup = WORKGROUP
+public=yes
+
+[kozos]
+path=/srv/kozos
+writeable=yes
+read only=no
+browseable=yes
+guest ok=yes
+public=yes
+
+[dok]
+path=/srv/dok
+writeable=no
+read only=no
+browseable=yes
+guest ok=yes
+public=yes
+
+[tanar1]
+path=/srv/tanar1
+writeable=yes
+read only=no
+browseable=no
+guest ok=yes
+public=no
+
+Mentés
+Kilépés mc-ből
+sudo service smbd restart
+sudo service smbd status
+
+sudo smbpasswd -a tanar1
+jelszó:suli
+jelszó:suli
+
+
+
+
