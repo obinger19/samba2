@@ -18,6 +18,7 @@ sudo mkdir /srv/kozos
 sudo chmod 777 /srv/kozos
 sudo mkdir /srv/dok
 sudo chmod 775 /srv/dok
+sudo mkdir /srv/tanar1
 sudo chown tanar1 /srv/tanar1
 sudo chmod 700 /srv/tanar1
 sudo mcedit /etc/samba/smb.conf
