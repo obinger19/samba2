@@ -56,12 +56,15 @@ public=no
 
 Mentés
 Kilépés mc-ből
-sudo service smbd restart
-sudo service smbd status
 
 sudo smbpasswd -a tanar1
 jelszó:suli
 jelszó:suli
+
+sudo service smbd restart
+sudo service smbd status
+
+
 
 
 
